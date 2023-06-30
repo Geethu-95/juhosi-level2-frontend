@@ -58,9 +58,10 @@ export default function LoginForm() {
             state: { owner: data[0].name, id: data[0].id },
           });
         } else {return alert("Invalid credentials!");}
-      }).catch((error) => {
-        console.error(error)
       })
+      // .catch((error) => {
+      //   console.error(error)
+      // })
   };
 
   const changePassword = () => {
