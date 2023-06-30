@@ -54,7 +54,7 @@ export default function LoginForm() {
           navigate("/orderEntry", { state: { owner: data[0].name ,id:data[0].id} });
         } else return alert("Invalid credentials!");
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {console.error(error)});
   };
 
   const changePassword = () => {
