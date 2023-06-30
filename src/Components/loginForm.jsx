@@ -38,7 +38,7 @@ export default function LoginForm() {
 
     const requestOptions = {
       method: "POST",
-      mode: "cors",
+      mode: "no-cors",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         "Access-Control-Allow-Origin": "*",
