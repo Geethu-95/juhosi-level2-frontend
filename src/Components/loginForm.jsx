@@ -59,7 +59,7 @@ export default function LoginForm() {
           });
         } else {return alert("Invalid credentials!");}
       }).catch((error) => {
-        console.error(error);
+        console.error(error)
       })
   };
 
