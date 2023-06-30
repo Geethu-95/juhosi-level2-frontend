@@ -50,7 +50,7 @@ export default function LoginForm() {
       "https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getFromId&Password",
       requestOptions
     )
-      .then((response) => response.json())
+      .then((response) => console.log(response))
       .then((data) => {
         if (data) {
           console.log(data);
