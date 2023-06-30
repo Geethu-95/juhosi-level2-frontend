@@ -46,24 +46,30 @@ export default function LoginForm() {
       body: formBody,
     };
 
-    fetch("https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getFromId&Password", requestOptions)
-    .then((response) => response.json())
+    fetch(
+      "https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getFromId&Password",
+      requestOptions
+    )
+      .then((response) => response.json())
       .then((data) => {
         if (data) {
           console.log(data);
-          navigate("/orderEntry", { state: { owner: data[0].name ,id:data[0].id} });
+          navigate("/orderEntry", {
+            state: { owner: data[0].name, id: data[0].id },
+          });
         } else return alert("Invalid credentials!");
-      })
-      .catch((error) => {console.error(error)});
+      }).catch((error) => {
+        console.error(error);
+      });
   };
 
   const changePassword = () => {
-// if(initialValues.id!=="")
-// console.log(initialValues.id)
-navigate("/changePassword")
-//  alert("Please enter Id")
-  }
-  
+    // if(initialValues.id!=="")
+    // console.log(initialValues.id)
+    navigate("/changePassword");
+    //  alert("Please enter Id")
+  };
+
   return (
     <>
       <div style={{ marginLeft: "40%" }}>
@@ -81,7 +87,6 @@ navigate("/changePassword")
                   </label> */}
                   <div className="control">
                     <Field
-                 
                       name="id"
                       type="text"
                       className="input"
@@ -97,7 +102,6 @@ navigate("/changePassword")
                   </label> */}
                   <div className="control">
                     <Field
-                  
                       name="password"
                       type="text"
                       className="input"
@@ -114,7 +118,11 @@ navigate("/changePassword")
           }}
         </Formik>
       </div>
-      <button style={{ marginLeft: "40%" }} className="button is-primary" onClick={changePassword}>
+      <button
+        style={{ marginLeft: "40%" }}
+        className="button is-primary"
+        onClick={changePassword}
+      >
         Change Password
       </button>
     </>
