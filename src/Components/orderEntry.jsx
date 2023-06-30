@@ -52,7 +52,7 @@ export default function OrderEntry() {
     // console.log("hi ", formBody);
     const requestOptions = {
       method: "POST",
-      mode: "no-cors",
+      mode: "cors",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         "Access-Control-Allow-Origin": "*",
