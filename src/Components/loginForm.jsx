@@ -34,7 +34,7 @@ export default function LoginForm() {
       formBody.push(encodedKey + "=" + encodedValue);
     }
     formBody = formBody.join("&");
-    // console.log(formBody);
+    console.log(formBody);
 
     const requestOptions = {
       method: "POST",
