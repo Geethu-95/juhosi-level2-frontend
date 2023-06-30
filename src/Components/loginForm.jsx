@@ -47,8 +47,8 @@ export default function LoginForm() {
     };
 
   await  fetch(
-      "https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getFromId&Password",
-      requestOptions
+      `https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getFromId&Password/${values.id}/${values.password}`
+      // requestOptions
     )
       // .then((response) => console.log(response))
       .then((data) => {
