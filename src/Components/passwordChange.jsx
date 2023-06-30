@@ -26,7 +26,7 @@ export default function PasswordChange() {
 
   const [apiResp, setApiResp] = useState();
 
-  const authenticationMech = (values) => {
+  const authenticationMech = async (values) => {
     // console.log("hi ",values)
     var formBody = [];
 
@@ -56,7 +56,7 @@ export default function PasswordChange() {
     };
     // console.log(values.phone)
 
-    fetch("https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getPhone", requestOptions)
+   await fetch("https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getPhone", requestOptions)
       .then((response) => response.json())
       .then((data) => {
         if (data) {
@@ -69,7 +69,7 @@ export default function PasswordChange() {
     // console.log(apiResp);
 
     if (apiResp.phone_number === values.phone) {
-      fetch("https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/update", requestOptions)
+    await  fetch("https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/update", requestOptions)
         .then((response) => response.json())
         .then((data) => {
           if (data) {

@@ -24,7 +24,7 @@ export default function LoginForm() {
 
   // const [formValues, setFormValues] = useState()
 
-  const authenticationMech = (values) => {
+  const authenticationMech = async (values) => {
     // setFormValues(values)
 
     var formBody = [];
@@ -46,7 +46,7 @@ export default function LoginForm() {
       body: formBody,
     };
 
-    fetch(
+  await  fetch(
       "https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getFromId&Password",
       requestOptions
     )

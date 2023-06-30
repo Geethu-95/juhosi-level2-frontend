@@ -30,7 +30,7 @@ export default function OrderEntry() {
     requests: Yup.string().required("Please enter value"),
   });
 
-  const submitForm = (values) => {
+  const submitForm = async (values) => {
     // console.log(values.orderDate);
 
     var postValues = {
@@ -60,7 +60,7 @@ export default function OrderEntry() {
       body: formBody,
     };
 
-    fetch(`https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/create`, requestOptions).then(
+   await fetch(`https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/create`, requestOptions).then(
       (response) => {
         console.log(response);
         alert("Successfully submitted data!");
