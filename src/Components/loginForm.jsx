@@ -22,10 +22,10 @@ export default function LoginForm() {
 
   const renderError = (message) => <p className="help is-danger">{message}</p>;
 
-  const [formValues, setFormValues] = useState()
+  // const [formValues, setFormValues] = useState()
 
   const authenticationMech = (values) => {
-    setFormValues(values)
+    // setFormValues(values)
 
     var formBody = [];
     for (var property in values) {
