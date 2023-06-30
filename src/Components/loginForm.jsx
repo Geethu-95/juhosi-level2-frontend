@@ -36,19 +36,19 @@ export default function LoginForm() {
     formBody = formBody.join("&");
     // console.log(formBody);
 
-    // const requestOptions = {
-    //   method: "POST",
-    //   mode: "no-cors",
-    //   headers: {
-    //     "Content-Type": "application/x-www-form-urlencoded",
-    //     "Access-Control-Allow-Origin": "*",
-    //   },
-    //   body: formBody,
-    // };
+    const requestOptions = {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Access-Control-Allow-Origin": "*",
+      },
+      body: formBody,
+    };
 
   await  fetch(
-      `https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getFromId&Password/${values.id}/${values.password}`
-      // requestOptions
+      "https://celebrated-sawine-2b01a9.netlify.app/.netlify/functions/index/api/getFromId&Password",
+      requestOptions
     )
       // .then((response) => console.log(response))
       .then((data) => {
